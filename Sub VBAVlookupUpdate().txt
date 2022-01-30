@@ -1,0 +1,48 @@
+Sub VBAVlookupUpdate()
+' Created by : vincentwidyan
+' Timestamp : 2022-01-30 22:14:30
+
+' Update Vlookup by VBA
+' Multiple Column
+    
+' Initiations, Creating variable
+
+    Dim rw As Long ' rw : variable untuk loop antar baris
+    Dim rng As Range ' rng : Range Pencarian/parameter ke-2 rumus Vlookup
+    Dim twb As Workbook ' twb : variable tempat Workbook
+    
+    ' Initiate column referensi untuk Vlookup multiple column
+    Dim Col_Ref(1 To 3) As Integer
+    
+    Col_Ref(1) = 2 ' Column B : Distribution
+    Col_Ref(2) = 3 ' Column C : Release Date
+    Col_Ref(3) = 4 ' Column D : World Sales in ($)
+    
+    
+    ' Intiate column and row
+    Dim first_row As Integer
+    first_row = 3
+    Dim col_index As Integer
+    col_index = 1
+    Dim row_ref As Integer
+    row_ref = 1
+    
+    Set twb = ThisWorkbook ' Assign variable twb sebagai Workbook ini
+    Set rng = twb.Worksheets("Worksheet").Range("B2:K1000") ' Assign var rng dari B2 sampai K1000
+    
+    ' Working hanya di Sheet1 saja
+    With twb.Sheets("Sheet1")
+    
+        'Nested Loop, di setiap kolom lalu disetiap baris sampai baris terakhir, lakukan Vlookup
+        For Each re In Col_Ref
+            For rw = first_row To .Cells(Rows.Count, 1).End(xlUp).Row
+                .Cells(rw, re) = Application.VLookup(.Cells(rw, col_index).Value2, rng, .Cells(row_ref, re), False)
+            Next rw
+        Next re
+        
+        ' .Cells(3, 2) = Application.Vlookup(.Cells(3,1).Value2, rng, .Cells(1,2), Fal
+        
+        Debug.Print "All is Done"
+    End With
+    
+End Sub
