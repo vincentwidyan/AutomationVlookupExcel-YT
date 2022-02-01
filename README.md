@@ -17,3 +17,9 @@ Automasi Excel Vlookup #2 | Vlookup Multiple Kolom dan Baris Tercepat
 Automasi Excel Vlookup #3 | Vlookup Otomatis dengan Macro Excel
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/pH--LnDIL1k/0.jpg)](https://www.youtube.com/watch?v=pH--LnDIL1k)
+
+
+## Part #4 | Vlookup Otomatis dengan VBA Excel
+Vlookup Otomatis dengan VBA | #4 Automasi Excel Vlookup
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Muyl2CrBHhU/0.jpg)](https://www.youtube.com/watch?v=Muyl2CrBHhU)
